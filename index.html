@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>La traversée de l'Île en Hiver — Une aventure personnelle</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>La Traversée</h1>
+      <div class="subtitle">Une aventure personnelle. 100 kilomètres, face à l'hiver montréalais.</div>
+      <div class="description">
+        <div id="countdown" class="countdown-container">
+          <div class="countdown-item">
+            <span id="days" class="countdown-number">--</span>
+            <span class="countdown-label">J</span>
+      </div>
+          <div class="countdown-item">
+            <span id="hours" class="countdown-number">--</span>
+            <span class="countdown-label">H</span>
+    </div>
+          <div class="countdown-item">
+            <span id="minutes" class="countdown-number">--</span>
+            <span class="countdown-label">M</span>
+       </div>
+          <div class="countdown-item">
+            <span id="seconds" class="countdown-number">--</span>
+            <span class="countdown-label">S</span>
+     </div>
+           </div>
+         </div>
+         </div>
+  </header>
+     
+   <main class="main-content">
+
+     <!-- Section 1: Les bulles -->
+     <div class="container-full">
+     <div class="container-full">
+        <div class="race-stats-horizontal scroll-reveal delay-4">
+         <div class="stat-card">
+           <div class="stat-icon">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <circle cx="12" cy="12" r="10"/>
+               <polyline points="12,6 12,12 16,14"/>
+             </svg>
+           </div>
+           <div class="stat-content">
+             <div class="stat-title">Départ</div>
+             <div class="stat-value" id="departure">6h00</div>
+           </div>
+         </div>
+         
+         <div class="stat-card">
+           <div class="stat-icon">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <path d="M3 3h18v18H3zM9 9h6v6H9z"/>
+               <path d="M12 2v20M2 12h20"/>
+             </svg>
+           </div>
+           <div class="stat-content">
+             <div class="stat-title">Distance</div>
+             <div class="stat-value" id="distance">— km</div>
+           </div>
+         </div>
+         
+         <div class="stat-card">
+           <div class="stat-icon">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <path d="M3 20h18l-1.5-6H4.5L3 20z"/>
+               <path d="M12 2v18"/>
+               <path d="M8 8l4-4 4 4"/>
+             </svg>
+           </div>
+           <div class="stat-content">
+             <div class="stat-title">Dénivelé</div>
+             <div class="stat-value" id="elevation">— m</div>
+           </div>
+         </div>
+           </div>
+           </div>
+          <!-- Section 1: Le Défi (L'histoire) -->
+          <div class="container-full">
+            <div class="race-info scroll-reveal delay-1">
+              <div class="content-text">
+                <h2>Une aventure de 100km à travers la métropole</h2>
+                <p>Ce projet est né d'une frustration. Le weekend où je devais courir le Bromont Ultra 80km, une entorse m'a cloué sur la touche. L'envie de courir est immense, mais le calendrier des courses est vide jusqu'au printemps. Alors, j'ai décidé de créer ma propre course...</p>
+         </div>
+              <div class="image-container">
+                <img src="soulier.webp" alt="Chaussures de course" class="section-image">
+           </div>
+           </div>
+         </div>
+         
+     <!-- Section 2: Le Parcours (La carte et les chiffres) -->
+     <div class="container-full">
+       <div class="trace-profile-section scroll-reveal delay-2">
+         
+         <div class="profile-container">
+           <div class="profile-chart">
+             <canvas id="profile"></canvas>
+           </div>
+           </div>
+         
+         <div class="map-container">
+           <div id="map"></div>
+         </div>
+       </div>
+     </div>
+     
+
+         
+     
+     <!-- Section 3: L'Athlète (Un profil discret) -->
+     <div class="container-full">
+       <div class="race-info scroll-reveal delay-1">
+         <div class="image-container image-left">
+           <img src="R2_carre.png" alt="Profil de l'athlète" class="section-image">
+         </div>
+         <div class="content-text">
+           <h2>J'ai juste envie de courir*</h2>
+           <p>Le 28 février 2026, à 6h00 du matin, je tenterai la traversée intégrale de l'île de Montréal d'est en ouest. Un parcours de 100 km en solo, passant par les sommets de la ville, en plein hiver. Ce n'est pas une course officielle. Il n'y a pas de médaille à l'arrivée. Juste un défi personnel pour transformer une déception en accomplissement.</p>
+         </div>
+       </div>
+     </div>
+     
+     <!-- Section 4: La Stratégie (Le plan logistique) -->
+     <div class="container-full">
+       <div class="race-info scroll-reveal delay-2">
+         <div class="content-text">
+         <h2>Le Succès Repose sur le Soutien</h2>
+         <p>Courir 100 km en février demande plus qu'un bon entraînement. La gestion du froid, de la nutrition et de la fatigue est primordiale. La réussite de ce défi repose sur la mise en place d'une équipe de soutien restreinte mais fiable pour gérer 5 points de ravitaillement stratégiques. Ce soutien humain est le besoin le plus critique du projet.</p>
+         </div>
+         <div class="image-container">
+           <img src="photos/PXL_20250121_140601505.PORTRAIT.jpg" alt="Portrait de l'athlète" class="section-image">
+         </div>
+       </div>
+     </div>
+     
+     <!-- Section 5: Devenir Partenaire (Appel à l'action) -->
+     <div class="container-full">
+       <div class="race-info scroll-reveal delay-3">
+         <h2>Rejoignez l'aventure en coulisses</h2>
+         
+         <p>Ce projet est une aventure authentique, loin des projecteurs. Je ne recherche pas une visibilité massive, mais des partenaires qui partagent les valeurs d'entraide et de dépassement de soi. Mon besoin principal est de constituer l'équipe de soutien qui m'assistera aux points de ravitaillement.</p>
+         
+         <h3>Ce qui est recherché</h3>
+         <ul>
+           <li><strong>Soutien Humain :</strong> Aide pour recruter des bénévoles fiables et expérimentés</li>
+           <li><strong>Soutien Matériel :</strong> Équipement adapté aux conditions hivernales extrêmes</li>
+           <li><strong>Soutien Nutritionnel :</strong> Produits énergétiques pour tenir la distance</li>
+         </ul>
+         
+         <div style="margin-top: 2rem;">
+           <a href="mailto:contact@example.com" class="btn">Soutenir le Projet</a>
+         </div>
+       </div>
+     </div>
+     
+   </main>
+
+  <footer style="background: var(--primary); color: var(--white); padding: 2rem 0; text-align: center; margin-top: 3rem;">
+      <p style="opacity: 0.6; font-size: 0.9rem;">© <script>document.write(new Date().getFullYear())</script> | Développé avec ❤️ par <a href="https://github.com/X4v13rR0ux">R31v4x</a></p>
+  </footer>
+
+  <!-- Librairies -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/togeojson/0.16.0/togeojson.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

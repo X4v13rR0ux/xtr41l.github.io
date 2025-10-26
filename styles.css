@@ -1,0 +1,1041 @@
+/* Charte graphique "Le Tour de l'Île en Hiver" */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  /* Charte graphique hivernale minimaliste */
+  --bg-primary: #F5F5F5;      /* Blanc cassé - fond principal */
+  --bg-secondary: #E8F4F8;    /* Bleu-gris très clair - sections alternées */
+  --primary: #2C3E50;         /* Bleu acier - titres et éléments importants */
+  --accent: #BF360C;          /* Orange brûlé - accent et CTA */
+  --text: #34495E;            /* Gris anthracite - texte principal */
+  --text-light: #7F8C8D;      /* Gris clair - textes secondaires */
+  --white: #FFFFFF;           /* Blanc pur */
+  --white-soft: #FEFEFE;      /* Blanc cassé pour texte */
+  --border: rgba(44, 62, 80, 0.1);
+  --shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+  --shadow-soft: 0 2px 10px rgba(44, 62, 80, 0.05);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text);
+  line-height: 1.7;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Effet hivernal subtil en arrière-plan */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(44, 62, 80, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(191, 54, 12, 0.01) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(127, 140, 141, 0.01) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container-full {
+  max-width: none;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Header - Style hivernal minimaliste */
+.header {
+  background: linear-gradient(135deg, rgba(232, 244, 248, 0.8) 0%, rgba(232, 244, 248, 0.8) 100%), url('fond.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white-soft);
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(191, 54, 12, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  color: var(--white-soft);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header .subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.header .description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  line-height: 1.4;
+}
+
+/* Styles pour le compte à rebours */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  margin-top: 1rem;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 80px;
+  min-height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  padding: 1rem 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.countdown-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(255, 255, 255, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* Links */
+a {
+  color: #5DADE2; /* Bleu clair */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #3498DB; /* Bleu plus foncé au survol */
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #5DADE2; /* Bleu clair pour les liens visités */
+}
+
+/* Main content */
+.main-content {
+  padding: 3rem 0;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* Sections de contenu - Style hivernal minimaliste */
+.race-info {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 3rem;
+  box-shadow: var(--shadow-soft);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.race-info h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.race-info h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  margin: 2.5rem 0 1.5rem 0;
+  position: relative;
+}
+
+.race-info p {
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.race-info ul {
+  margin: 1.5rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.race-info li {
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.race-info li::before {
+  content: '•';
+  color: var(--accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+ /* Race Stats Horizontal - Style hivernal */
+ .race-stats-horizontal {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 2rem;
+   margin: 3rem 0;
+   padding: 3rem;
+   background: var(--bg-secondary);
+   border-radius: 8px;
+   box-shadow: var(--shadow-soft);
+   border: none;
+   position: relative;
+   overflow: hidden;
+ }
+ 
+ .stat-card {
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   padding: 2rem;
+   background: var(--white);
+   border-radius: 8px;
+   border: none;
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: hidden;
+   box-shadow: var(--shadow-soft);
+ }
+ 
+ .stat-card:hover {
+   transform: translateY(-3px);
+   box-shadow: var(--shadow);
+ }
+ 
+ .stat-icon {
+   width: 50px;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: var(--primary);
+   border-radius: 50%;
+   flex-shrink: 0;
+   box-shadow: var(--shadow-soft);
+   position: relative;
+   z-index: 1;
+ }
+ 
+ .stat-icon svg {
+   width: 22px;
+   height: 22px;
+   color: var(--white);
+ }
+ 
+ .stat-content {
+   flex: 1;
+ }
+ 
+ .stat-title {
+   color: var(--text-light);
+   font-size: 0.95rem;
+   font-weight: 400;
+   margin-bottom: 0.5rem;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+ }
+ 
+ .stat-value {
+   color: var(--primary);
+   font-size: 1.3rem;
+   font-weight: 500;
+   font-family: 'Montserrat', sans-serif;
+ }
+
+ .btn {
+   display: inline-block;
+   padding: 16px 32px;
+   background: var(--accent);
+   color: var(--white-soft);
+   text-decoration: none;
+   border-radius: 6px;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 500;
+   text-transform: none;
+   letter-spacing: 0.5px;
+   transition: all 0.3s ease;
+   margin-top: 2rem;
+   box-shadow: var(--shadow);
+   border: none;
+   position: relative;
+   overflow: hidden;
+   font-size: 1.1rem;
+ }
+ 
+ .btn:hover {
+   background: #A52A00;
+   transform: translateY(-2px);
+   box-shadow: 0 6px 20px rgba(191, 54, 12, 0.3);
+ }
+ 
+ .btn-secondary {
+   background: transparent;
+   color: var(--primary);
+   border: 2px solid var(--primary);
+   box-shadow: none;
+ }
+ 
+ .btn-secondary:hover {
+   background: var(--primary);
+   color: var(--white-soft);
+   box-shadow: var(--shadow);
+ }
+
+ /* Trace and Profile Section - Style hivernal */
+ .trace-profile-section {
+   background: var(--bg-secondary);
+   border-radius: 8px;
+   padding: 3rem;
+   box-shadow: var(--shadow-soft);
+   border: none;
+   margin-bottom: 3rem;
+   width: 100%;
+   max-width: none;
+   box-sizing: border-box;
+   position: relative;
+   overflow: hidden;
+ }
+ 
+ .trace-profile-section h3 {
+   font-family: 'Montserrat', sans-serif;
+   color: var(--primary);
+   font-size: 1.8rem;
+   font-weight: 300;
+   text-transform: none;
+   letter-spacing: 0.5px;
+   margin-bottom: 2.5rem;
+   position: relative;
+ }
+ 
+ .profile-container {
+   margin-bottom: 2rem;
+ }
+ 
+ .profile-container .profile-chart {
+   background: var(--white);
+   border-radius: 8px;
+   padding: 2rem;
+   width: 100%;
+   height: 350px;
+   box-sizing: border-box;
+   border: none;
+   box-shadow: var(--shadow-soft);
+ }
+ 
+ .map-container {
+   width: 100%;
+ }
+ 
+ #map {
+   height: 500px;
+   border-radius: 8px;
+   overflow: hidden;
+   border: none;
+   box-shadow: var(--shadow);
+ }
+
+ 
+ canvas {
+   width: 100% !important;
+   height: 300px !important;
+   max-width: 100%;
+   display: block;
+ }
+ 
+ /* Custom marker styles */
+ .custom-marker {
+   background: transparent !important;
+   border: none !important;
+ }
+ 
+ /* Change cursor to arrow on map line hover */
+ .leaflet-interactive {
+   cursor: default !important;
+ }
+ 
+ /* Styles pour les marqueurs de ravitaillement */
+ .supply-station-marker {
+   background: transparent !important;
+   border: none !important;
+ }
+ 
+ .station-marker {
+   width: 30px;
+   height: 30px;
+   background: var(--primary);
+   color: var(--white);
+   border: 3px solid var(--white);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   font-size: 12px;
+   box-shadow: 0 2px 8px rgba(44, 62, 80, 0.3);
+   cursor: pointer;
+   transition: all 0.3s ease;
+ }
+ 
+ .station-marker:hover {
+   background: var(--accent);
+   transform: scale(1.1);
+   box-shadow: 0 4px 12px rgba(44, 62, 80, 0.4);
+ }
+ 
+ .start-marker {
+   background: var(--accent) !important;
+   font-size: 10px;
+   width: 60px;
+   height: 30px;
+   border-radius: 15px;
+ }
+ 
+ .finish-marker {
+   background: var(--primary) !important;
+   font-size: 10px;
+   width: 70px;
+   height: 30px;
+   border-radius: 15px;
+ }
+ 
+ .station-popup {
+   text-align: center;
+   font-family: 'Lato', sans-serif;
+   color: var(--text);
+ }
+ 
+ .station-popup strong {
+   color: var(--primary);
+   font-family: 'Montserrat', sans-serif;
+ }
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+ @media (max-width: 1024px) {
+   .race-stats-horizontal {
+     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+     gap: 1rem;
+     padding: 1.5rem;
+   }
+   
+   .container {
+     padding: 0 20px;
+   }
+ }
+
+ @media (max-width: 768px) {
+   .header {
+     padding: 1.5rem 0;
+   }
+   
+   .header h1 {
+     font-size: 2rem;
+   }
+   
+   .header .subtitle {
+     font-size: 1rem;
+   }
+   
+   .header .description {
+     font-size: 0.9rem;
+   }
+   
+   /* Compte à rebours responsive */
+   .countdown-container {
+     gap: 0.8rem;
+     flex-wrap: nowrap;
+   }
+   
+   .countdown-item {
+     min-width: 70px;
+     min-height: 85px;
+     padding: 0.8rem 0.4rem;
+   }
+   
+   .countdown-number {
+     font-size: 1.8rem;
+     margin-bottom: 0.3rem;
+   }
+   
+   .countdown-label {
+     font-size: 0.6rem;
+   }
+   
+   .main-content {
+     padding: 2rem 0;
+   }
+   
+   .container {
+     padding: 0 15px;
+   }
+   
+    .race-info, .trace-profile-section {
+      padding: 1.5rem;
+    }
+    
+    /* Layout responsive pour l'image */
+    .race-info {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .image-container {
+      flex: none;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      order: 0;
+    }
+    
+    .image-container.image-left {
+      order: 0;
+    }
+   
+   .trace-profile-section h3 {
+     font-size: 1.2rem;
+     margin-bottom: 1.5rem;
+   }
+   
+   .profile-container {
+     margin-bottom: 1.5rem;
+   }
+   
+   .race-stats-horizontal {
+     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+     gap: 1rem;
+     padding: 1rem;
+     margin: 2rem 0;
+   }
+   
+   .stat-card {
+     padding: 0.8rem;
+     gap: 0.8rem;
+   }
+   
+   .stat-icon {
+     width: 35px;
+     height: 35px;
+   }
+   
+   .stat-icon svg {
+     width: 18px;
+     height: 18px;
+   }
+  
+  .race-info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .race-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .stats-panel h3 {
+    font-size: 1.2rem;
+  }
+  
+  .stat-item {
+    padding: 0.8rem 0;
+  }
+  
+  .stat-value {
+    font-size: 1rem;
+  }
+  
+  #map {
+    height: 300px;
+  }
+  
+  canvas {
+    height: 250px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+   .race-info, .trace-profile-section {
+     padding: 1rem;
+   }
+   
+   #map {
+     height: 400px;
+   }
+   
+   .race-stats-horizontal {
+     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+     gap: 0.8rem;
+     padding: 0.8rem;
+   }
+   
+   .stat-card {
+     padding: 0.6rem;
+     gap: 0.6rem;
+   }
+   
+   .stat-icon {
+     width: 30px;
+     height: 30px;
+   }
+   
+   .stat-icon svg {
+     width: 16px;
+     height: 16px;
+   }
+   
+   .stat-title {
+     font-size: 0.8rem;
+   }
+   
+   .stat-value {
+     font-size: 1rem;
+   }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .race-info h2 {
+    font-size: 1.3rem;
+  }
+  
+  .race-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  #map {
+    height: 250px;
+  }
+  
+  canvas {
+    height: 200px;
+  }
+  
+  .stat-item {
+    padding: 0.6rem 0;
+  }
+  
+  .stat-label, .stat-value {
+    font-size: 0.9rem;
+  }
+}
+
+ @media (max-width: 480px) {
+   .container {
+     padding: 0 8px;
+   }
+   
+    .race-info, .trace-profile-section {
+      padding: 0.8rem;
+    }
+    
+    /* Compte à rebours très petit écran */
+    .countdown-container {
+      gap: 0.6rem;
+      flex-wrap: nowrap;
+    }
+    
+    .countdown-item {
+      min-width: 60px;
+      min-height: 75px;
+      padding: 0.6rem 0.3rem;
+    }
+    
+    .countdown-number {
+      font-size: 1.5rem;
+      margin-bottom: 0.2rem;
+    }
+    
+    .countdown-label {
+      font-size: 0.55rem;
+    }
+   
+   #map {
+     height: 300px;
+   }
+   
+   .race-stats-horizontal {
+     grid-template-columns: 1fr 1fr;
+     gap: 0.6rem;
+     padding: 0.6rem;
+   }
+   
+   .stat-card {
+     padding: 0.5rem;
+     gap: 0.5rem;
+   }
+   
+   .stat-icon {
+     width: 28px;
+     height: 28px;
+   }
+   
+   .stat-icon svg {
+     width: 14px;
+     height: 14px;
+   }
+   
+   .stat-title {
+     font-size: 0.75rem;
+   }
+   
+   .stat-value {
+     font-size: 0.9rem;
+   }
+  
+  .header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .race-info h2 {
+    font-size: 1.2rem;
+  }
+  
+  .race-info h3 {
+    font-size: 1rem;
+  }
+  
+  #map {
+    height: 200px;
+  }
+  
+  canvas {
+    height: 180px;
+  }
+  
+  .stat-item {
+    padding: 0.5rem 0;
+  }
+  
+  .stat-label, .stat-value {
+    font-size: 0.85rem;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+}
+
+/* Scroll reveal animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation pour les cartes de statistiques */
+.scroll-reveal .stat-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+  transition-delay: calc(var(--delay, 0) * 0.1s);
+}
+
+.scroll-reveal.revealed .stat-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation pour le header */
+.header {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 1s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation pour les sections avec délai */
+.scroll-reveal.delay-1 { transition-delay: 0.1s; }
+.scroll-reveal.delay-2 { transition-delay: 0.2s; }
+.scroll-reveal.delay-3 { transition-delay: 0.3s; }
+.scroll-reveal.delay-4 { transition-delay: 0.4s; }
+
+/* Animation pour les boutons */
+.btn {
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Animation pour les cartes de statistiques au survol */
+.stat-card {
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Animation pour les sections de contenu */
+.race-info, .trace-profile-section {
+  transition: all 0.3s ease;
+}
+
+/* Effet de parallaxe subtil pour le header */
+.header {
+  background-attachment: fixed;
+}
+
+/* Animation pour les éléments de liste */
+.race-info li {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.4s ease;
+}
+
+.scroll-reveal.revealed .race-info li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal.revealed .race-info li:nth-child(1) { transition-delay: 0.1s; }
+.scroll-reveal.revealed .race-info li:nth-child(2) { transition-delay: 0.2s; }
+.scroll-reveal.revealed .race-info li:nth-child(3) { transition-delay: 0.3s; }
+
+/* Animation pour les titres */
+.race-info h2, .race-info h3, .trace-profile-section h3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+.scroll-reveal.revealed .race-info h2,
+.scroll-reveal.revealed .race-info h3,
+.scroll-reveal.revealed .trace-profile-section h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation pour les paragraphes */
+.race-info p {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.scroll-reveal.revealed .race-info p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais échelonnés pour les paragraphes */
+.scroll-reveal.revealed .race-info p:nth-child(2) { transition-delay: 0.1s; }
+.scroll-reveal.revealed .race-info p:nth-child(3) { transition-delay: 0.2s; }
+.scroll-reveal.revealed .race-info p:nth-child(4) { transition-delay: 0.3s; }
+
+/* Styles pour les images dans les sections */
+.image-container {
+  flex: 0 0 300px;
+  margin-left: 2rem;
+  text-align: center;
+}
+
+.image-container.image-left {
+  margin-left: 0;
+  margin-right: 2rem;
+  order: -1;
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.section-image:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Layout flexbox pour la section avec image */
+.race-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.race-info .content-text {
+  flex: 1;
+}
+
+/* Animation pour l'image */
+.image-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.scroll-reveal.revealed .image-container {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
